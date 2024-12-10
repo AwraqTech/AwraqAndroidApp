@@ -21,23 +21,29 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white, // Light mode background color
         useMaterial3: true,
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-          backgroundColor: Color(0xFFF1F1F1), // Light background color for nav bar
+          backgroundColor:
+              Color(0xFFF1F1F1), // Light background color for nav bar
           selectedItemColor: Color(0xFF081014), // Light active icon color
-          unselectedItemColor: Colors.black45, // Inactive icons will be black45 by default
+          unselectedItemColor:
+              Colors.black45, // Inactive icons will be black45 by default
         ),
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
         primarySwatch: Colors.deepPurple,
-        scaffoldBackgroundColor: const Color.fromARGB(255, 8, 13, 20), // Dark mode background color
+        scaffoldBackgroundColor:
+            const Color.fromARGB(255, 8, 13, 20), // Dark mode background color
         useMaterial3: true,
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-          backgroundColor: Color.fromARGB(255, 8, 13, 20), // Dark background color for nav bar
+          backgroundColor: Color.fromARGB(
+              255, 8, 13, 20), // Dark background color for nav bar
           selectedItemColor: Color(0xFF43A2FE), // Dark active icon color
-          unselectedItemColor: Colors.black45, // Inactive icons will be black45 by default
+          unselectedItemColor:
+              Colors.black45, // Inactive icons will be black45 by default
         ),
       ),
-      themeMode: ThemeMode.system, // Automatically switch between light and dark mode
+      themeMode:
+          ThemeMode.system, // Automatically switch between light and dark mode
       home: const MyHomePage(),
     );
   }
@@ -70,18 +76,15 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    
-
     return Scaffold(
-      
       body: _pages[_selectedIndex], // Display the selected page
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           border: Border(
             top: BorderSide(
               color: Theme.of(context).brightness == Brightness.dark
-                  ? const Color.fromARGB(255, 22, 22, 22)
-                  : const Color.fromARGB(255, 238, 238, 238), // Border color
+                  ? Colors.white12
+                  : Colors.black12,
               width: 1.0, // Border width
             ),
           ),
@@ -94,7 +97,9 @@ class _MyHomePageState extends State<MyHomePage> {
               icon: Icon(
                 Icons.analytics_rounded,
                 size: 26,
-                color: _selectedIndex == 0 ? const Color(0xFF43A2FE) : null, // Change color when selected
+                color: _selectedIndex == 0
+                    ? const Color(0xFF43A2FE)
+                    : null, // Change color when selected
               ),
               label: 'Overview',
               selectedIcon: const Icon(
@@ -107,7 +112,9 @@ class _MyHomePageState extends State<MyHomePage> {
               icon: Icon(
                 Icons.timer_rounded,
                 size: 26,
-                color: _selectedIndex == 1 ? const Color(0xFF43A2FE) : null, // Change color when selected
+                color: _selectedIndex == 1
+                    ? const Color(0xFF43A2FE)
+                    : null, // Change color when selected
               ),
               label: 'Events',
               selectedIcon: const Icon(
@@ -120,7 +127,9 @@ class _MyHomePageState extends State<MyHomePage> {
               icon: Icon(
                 Icons.store_rounded,
                 size: 26,
-                color: _selectedIndex == 2 ? const Color(0xFF43A2FE) : null, // Change color when selected
+                color: _selectedIndex == 2
+                    ? const Color(0xFF43A2FE)
+                    : null, // Change color when selected
               ),
               label: 'POS',
               selectedIcon: const Icon(
@@ -133,7 +142,9 @@ class _MyHomePageState extends State<MyHomePage> {
               icon: Icon(
                 Icons.settings,
                 size: 26,
-                color: _selectedIndex == 3 ? const Color(0xFF43A2FE) : null, // Change color when selected
+                color: _selectedIndex == 3
+                    ? const Color(0xFF43A2FE)
+                    : null, // Change color when selected
               ),
               label: 'Settings',
               selectedIcon: const Icon(
@@ -147,7 +158,8 @@ class _MyHomePageState extends State<MyHomePage> {
               ? const Color.fromARGB(255, 8, 13, 20) // Dark background color
               : const Color(0xFFFFFFFF), // Light background color
           indicatorColor: Theme.of(context).brightness == Brightness.dark
-              ? const Color.fromARGB(255, 34, 55, 85) // Dark indicator background
+              ? const Color.fromARGB(
+                  255, 34, 55, 85) // Dark indicator background
               : const Color(0xFFBFE0FF), // Light indicator background
         ),
       ),

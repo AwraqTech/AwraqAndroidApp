@@ -5,51 +5,39 @@ class NotificationsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Set AppBar background color based on theme
     Color appBarBackgroundColor =
         Theme.of(context).brightness == Brightness.dark
-            ? const Color.fromARGB(
-                255, 8, 13, 20) // Dark background color for AppBar
-            : const Color(0xFFFFFFFF); // Light background color for AppBar
+            ? const Color.fromARGB(255, 8, 13, 20)
+            : const Color(0xFFFFFFFF);
 
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(90), // Set height of AppBar
+        preferredSize: const Size.fromHeight(kToolbarHeight),
         child: Container(
-          margin: const EdgeInsets.symmetric(
-              horizontal: 16), // Set horizontal margin
-              padding: const EdgeInsets.only(top: 16),
+          decoration: BoxDecoration(
+            border: Border(
+              bottom: BorderSide(
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.white12 // Dark theme divider color
+                    : Colors.black12, // Light theme divider color
+                width: 1.0, // Thickness of the border
+              ),
+            ),
+          ),
           child: AppBar(
             leading: IconButton(
               icon: const Icon(
                 Icons.arrow_back,
-                size: 32,
+                size: 26,
               ),
               onPressed: () {
-                Navigator.of(context).pop(); // Go back to the previous screen
+                Navigator.of(context).pop();
               },
             ),
             title: const Text(
-              'Notifications',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 26,
-              ),
-            ), // Title of the AppBar
-            backgroundColor:
-                appBarBackgroundColor, // Set AppBar background color dynamically
-            actions: [
-              IconButton(
-                icon: const Icon(
-                  Icons.refresh,
-                  size: 32,
-                ),
-                onPressed: () {
-                  // You can add functionality to refresh the page here
-                  print("Page Refreshed");
-                },
-              ),
-            ],
+              'Notifications'
+            ),
+            backgroundColor: appBarBackgroundColor,
           ),
         ),
       ),
